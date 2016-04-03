@@ -6,8 +6,8 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://cdn.codegecko.com/packages/uLogdash.png</iconUrl>
+    <projectUrl>https://github.com/codegecko/umbraco-packages/CodeGecko.uLogDash</projectUrl>
+    <iconUrl>http://cdn.codegecko.com/packages/CodeGecko.uLogdash/logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial release.</releaseNotes>
@@ -17,4 +17,7 @@
       <dependency id="UmbracoCms.Core" version="7.0.0" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="App_Plugins\CodeGecko.MediaCopy\**\*.*" target="content\App_Plugins\CodeGecko.MediaCopy\**\*.*" />
+  </files>
 </package>
