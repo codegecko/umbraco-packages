@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<log4net xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <root>
+    <appender-ref ref="AdoNetAppender" xdt:Transform="Remove" xdt:Locator="Match(ref)" />
+  </root>
+
+  <appender name="AdoNetAppender" type="log4net.Appender.AdoNetAppender" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+</log4net>

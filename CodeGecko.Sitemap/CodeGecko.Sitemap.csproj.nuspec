@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <iconUrl>http://cdn.codegecko.com/packages/CodeGecko.Sitemap/logo.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2016 Benjamin Howarth, Code Gecko Ltd. All rights reserved.</copyright>
+    <tags>umbraco xml sitemap codegecko</tags>
+    <dependencies>
+      <dependency id="UmbracoCms.Core" version="7.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Views\XmlSitemap.cshtml" target="content\Views\XmlSitemap.cshtml" />
+    <file src="readme.txt" target="" />
+  </files>
+</package>

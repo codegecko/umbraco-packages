@@ -1,0 +1,49 @@
+﻿@using CodeGecko.Packages.Umbraco.Sitemap.Models
+@using Umbraco.Core.Models
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    var rootNode = Umbraco.AssignedContentItem;
+}<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    @UrlForNode(rootNode)
+</urlset>
+
+@helper UrlForNode(IPublishedContent node)
+{
+    <url>
+        <loc>@node.UrlWithDomain()</loc>
+        <lastmod>@node.UpdateDate.ToString("yyyy-MM-dd")</lastmod>
+        <changefreq>@CalculateChangeFrequency(node)</changefreq>
+        <priority>0.8</priority>
+    </url>
+if (node.Children.Any(p => p.IsVisible())) {
+    foreach (var child in node.Children.Where(p => p.IsVisible())) {
+            @UrlForNode(child)
+    }
+}
+}
+
+@functions {
+    string CalculateChangeFrequency(IPublishedContent content)
+    {
+
+        TimeSpan averageTime;
+        var db = ApplicationContext.DatabaseContext.Database;
+        db.BeginTransaction();
+        using (var trx = db.GetTransaction())
+        {
+            averageTime = TimeSpan.FromSeconds(db.Fetch<NodeUpdated>("SELECT * FROM vwSitemapDateModified WHERE ContentId = @0", content.Id).Single().AverageUpdateTimespan);
+            db.CompleteTransaction();
+        }
+
+        var timeAsFreq = "never";
+        if (averageTime.TotalDays > 182) { timeAsFreq = "yearly"; }
+        else if (averageTime.TotalDays > 16) { timeAsFreq = "monthly"; }
+        else if (averageTime.TotalDays > 4) { timeAsFreq = "weekly"; }
+        else if (averageTime.TotalHours > 12) { timeAsFreq = "daily"; }
+        else if (averageTime.TotalMinutes > 30) { timeAsFreq = "hourly"; }
+        else { timeAsFreq = "always"; }
+        return timeAsFreq;
+    }
+}

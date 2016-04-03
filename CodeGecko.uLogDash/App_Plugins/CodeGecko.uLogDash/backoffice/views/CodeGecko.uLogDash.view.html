@@ -1,0 +1,42 @@
+﻿<div data-ng-controller="CodeGecko.uLogDash">
+
+    <table>
+        <thead>
+            <tr>
+                <td><a href="#" data-ng-click="predicate='Date';reverse=!reverse">Date</a></td>
+                <td><a href="#" data-ng-click="predicate='Server';reverse=!reverse">Server</a></td>
+                <td><a href="#" data-ng-click="predicate='Thread';reverse=!reverse">Thread</a></td>
+                <td><a href="#" data-ng-click="predicate='Level';reverse=!reverse">Level</a></td>
+                <td><a href="#" data-ng-click="predicate='Logger';reverse=!reverse">Logger</a></td>
+                <td><a href="#" data-ng-click="predicate='Message';reverse=!reverse">Message</a></td>
+            </tr>
+            <tr>
+                <td><!-- Date picker --></td>
+                <td><input data-ng-model="search.Server" /></td>
+                <td><input data-ng-model="search.Thread" /></td>
+                <td>
+                    <select data-ng-model="search.Level">
+                        <option value="">All</option>
+                        <option value="DEBUG">Debug</option>
+                        <option value="INFO">Info</option>
+                        <option value="WARN">Warning</option>
+                        <option value="ERROR">Error</option>
+                        <option value="FATAL">Fatal</option>
+                    </select>
+                </td>
+                <td><input data-ng-model="search.Logger" /></td>
+                <td><input data-ng-model="search.Message" /></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="logEntry in visibleLog | orderBy:predicate:reverse | filter:search:strict">
+                <td>{{logEntry.Date}}</td>
+                <td>{{logEntry.Server}}</td>
+                <td>{{logEntry.Thread}}</td>
+                <td>{{logEntry.Level}}</td>
+                <td>{{logEntry.Logger}}</td>
+                <td>{{logEntry.Message}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

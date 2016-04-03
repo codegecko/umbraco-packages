@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGecko.MediaCopy", "CodeGecko.MediaCopy\CodeGecko.MediaCopy.csproj", "{2D4F3590-9052-48F9-ACB9-D737FA7B28B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0F7F02CC-87FD-4212-9647-EA34590EB417}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGecko.uLogDash", "CodeGecko.uLogDash\CodeGecko.uLogDash.csproj", "{0D0BABDE-72A9-49C5-8E4D-F4ECB311D868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGecko.Sitemap", "CodeGecko.Sitemap\CodeGecko.Sitemap.csproj", "{70B0E921-5985-4E7E-B18C-584000C37819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWebsite", "DemoWebsite\DemoWebsite.csproj", "{4B50F79B-A4CA-4F7D-987B-9D6DBFED44CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{067B1F0C-6592-4740-9DEB-4E28C9F4CD99}"
+	ProjectSection(SolutionItems) = preProject
+		SharedAssemlyInfo.cs = SharedAssemlyInfo.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D4F3590-9052-48F9-ACB9-D737FA7B28B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D4F3590-9052-48F9-ACB9-D737FA7B28B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D4F3590-9052-48F9-ACB9-D737FA7B28B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D4F3590-9052-48F9-ACB9-D737FA7B28B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0BABDE-72A9-49C5-8E4D-F4ECB311D868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0BABDE-72A9-49C5-8E4D-F4ECB311D868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0BABDE-72A9-49C5-8E4D-F4ECB311D868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0BABDE-72A9-49C5-8E4D-F4ECB311D868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B0E921-5985-4E7E-B18C-584000C37819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B0E921-5985-4E7E-B18C-584000C37819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B0E921-5985-4E7E-B18C-584000C37819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B0E921-5985-4E7E-B18C-584000C37819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B50F79B-A4CA-4F7D-987B-9D6DBFED44CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B50F79B-A4CA-4F7D-987B-9D6DBFED44CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B50F79B-A4CA-4F7D-987B-9D6DBFED44CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B50F79B-A4CA-4F7D-987B-9D6DBFED44CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

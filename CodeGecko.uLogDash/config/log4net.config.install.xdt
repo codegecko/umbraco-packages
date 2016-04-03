@@ -1,0 +1,49 @@
+﻿<?xml version="1.0"?>
+<log4net xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <root>
+    <appender-ref ref="uLogDashAppender" xdt:Transform="Insert" />
+  </root>
+  
+  <appender name="uLogDashAppender" type="log4net.Appender.AdoNetAppender" xdt:Transform="Insert">
+    <connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <connectionStringName value="umbracoDbDSN" />
+    <commandText value="INSERT INTO cgExceptionLog ([Date],[Server],[Thread],[Level],[Logger],[Message]) VALUES (@log_date, @server, @thread, @log_level, @logger, @message)" />
+    <useTransactions value="true" />
+    <bufferSize value="100" />
+    <parameter>
+      <parameterName value="@log_date" />
+      <dbType value="DateTime" />
+      <layout type="log4net.Layout.PatternLayout" value="%date{yyyy'-'MM'-'dd HH':'mm':'ss'.'fff}" />
+    </parameter>
+    <parameter>
+      <parameterName value="@server" />
+      <dbType value="String" />
+      <size value="255" />
+      <layout type="log4net.Layout.PatternLayout" value="${COMPUTERNAME}" />
+    </parameter>
+    <parameter>
+      <parameterName value="@thread" />
+      <dbType value="String" />
+      <size value="255" />
+      <layout type="log4net.Layout.PatternLayout" value="%thread" />
+    </parameter>
+    <parameter>
+      <parameterName value="@log_level" />
+      <dbType value="String" />
+      <size value="50" />
+      <layout type="log4net.Layout.PatternLayout" value="%level" />
+    </parameter>
+    <parameter>
+      <parameterName value="@logger" />
+      <dbType value="String" />
+      <size value="255" />
+      <layout type="log4net.Layout.PatternLayout" value="%logger" />
+    </parameter>
+    <parameter>
+      <parameterName value="@message" />
+      <dbType value="String" />
+      <size value="4000" />
+      <layout type="log4net.Layout.PatternLayout" value="%message" />
+    </parameter>
+  </appender>
+</log4net>

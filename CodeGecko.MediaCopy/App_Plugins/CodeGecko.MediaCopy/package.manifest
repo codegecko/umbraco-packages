@@ -1,0 +1,5 @@
+﻿{
+  "javascript": [
+    "~/App_Plugins/CodeGecko.MediaCopy/mediacopy.controller.js"
+  ]
+}
